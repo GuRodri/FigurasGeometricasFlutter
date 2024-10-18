@@ -31,6 +31,11 @@ class _SplashState extends State<Splash> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              Image.asset('assets/images/logos/fatec-matao.jpg'),
+              const SizedBox(height: 25.0,),
+              Image.asset('assets/images/logos/cst-dsm.png', width: 245, height: 84), 
+              const SizedBox(height: 25.0,),
+              Image.asset('assets/images/logos/cps-55-anos.png', width: 245, height: 84),
               Text(
                 'Loading...',
                 style: TextStyle(
