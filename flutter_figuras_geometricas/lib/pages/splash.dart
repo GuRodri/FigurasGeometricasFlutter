@@ -49,14 +49,14 @@ class _SplashState extends State<Splash> {
               strokeWidth: 11.0,
               ),
               SizedBox(height: 60.0,), //Definir uma caixa com espaçamento no tamanho de 35 dp (aprox. 35px)
-              Text('Alunos:',    //Definir um texto para o Splash
+              Text('Alunos: \nDiogo Castro''\nGustavo Rodrigues da Silva''\nLemuel Pires da Silva',    //Definir um texto para o Splash
                 style:TextStyle(  //Definir um estilo para o texto Splash
                   fontSize: 22.0,  //Fonte no tamanho 22dp (aprox. 22px)
                   fontWeight: FontWeight.bold, //Fonte no estilo negrito.
                   fontFamily: 'Arial' // Familia da Fonte: Arial.
                 ),
               ),
-              Text('Diogo Castro''\nGustavo Rodrigues da Silva''\nLemuel Pires da Silva',  //Definir um texto para o Splash
+              Text('Versão 1.0',  //Definir um texto para o Splash
               style: TextStyle( //Definir um estilo para o texto Splash
                 fontSize: 22.0, //Fonte no tamanho 22dp (aprox. 22px)
                 fontWeight: FontWeight.bold,  //Fonte no estilo negrito.
