@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-//import 'package:flutter_figuras_geometricas/pages/figurasgeometricas_page.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-
 import 'bemvindo_page.dart';
-
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -36,8 +33,11 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.teal[50],
       appBar: AppBar(
-        title: const Text('LoginApp'),
+        title: const Text('LoginApp', style: TextStyle(fontWeight: FontWeight.bold)),
+        backgroundColor: Colors.teal,
+        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -51,8 +51,11 @@ class _LoginState extends State<Login> {
       key: formKey,
       child: ListView(
         children: <Widget>[
+          SizedBox(height: 30),
           textFormFieldLogin(),
+          SizedBox(height: 20),
           textFormFieldSenha(),
+          SizedBox(height: 30),
           containerButtonEntrar(context),
         ],
       ),
@@ -64,10 +67,19 @@ class _LoginState extends State<Login> {
       controller: tecLogin,
       keyboardType: TextInputType.text,
       style: const TextStyle(color: Colors.black),
-      decoration: const InputDecoration(
+      decoration: InputDecoration(
         labelText: "Login",
-        labelStyle: TextStyle(fontSize: 20.0, color: Colors.black),
+        labelStyle: const TextStyle(fontSize: 20.0, color: Colors.teal),
         hintText: "Informe o login",
+        hintStyle: const TextStyle(color: Colors.grey),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(30),
+          borderSide: const BorderSide(color: Colors.teal),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(30),
+          borderSide: const BorderSide(color: Colors.teal, width: 2),
+        ),
       ),
       validator: (value) {
         if (value == null || value.isEmpty) {
@@ -84,10 +96,19 @@ class _LoginState extends State<Login> {
       obscureText: true,
       keyboardType: TextInputType.text,
       style: const TextStyle(color: Colors.black),
-      decoration: const InputDecoration(
+      decoration: InputDecoration(
         labelText: "Senha",
-        labelStyle: TextStyle(fontSize: 20.0, color: Colors.black),
+        labelStyle: const TextStyle(fontSize: 20.0, color: Colors.teal),
         hintText: "Informe a senha",
+        hintStyle: const TextStyle(color: Colors.grey),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(30),
+          borderSide: const BorderSide(color: Colors.teal),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(30),
+          borderSide: const BorderSide(color: Colors.teal, width: 2),
+        ),
       ),
       validator: (value) {
         if (value == null || value.isEmpty) {
@@ -100,19 +121,22 @@ class _LoginState extends State<Login> {
 
   Container containerButtonEntrar(BuildContext context) {
     return Container(
-      height: 40.0,
-      margin: const EdgeInsets.only(top: 10.0),
+      height: 50.0,
+      margin: const EdgeInsets.only(top: 20.0),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.blue,
-          foregroundColor: Colors.white,
+          foregroundColor: Colors.white, backgroundColor: Colors.teal,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
+          elevation: 5,
         ),
         onPressed: () {
           onClickLogin(context);
         },
         child: const Text(
           'Entrar',
-          style: TextStyle(color: Colors.white, fontSize: 20.0),
+          style: TextStyle(fontSize: 20.0),
         ),
       ),
     );
@@ -130,8 +154,8 @@ class _LoginState extends State<Login> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => Bemvindo(nome: nomeEntrada, sobrenome: sobrenomeEntrada)),
-        
+          builder: (context) => Bemvindo(nome: nomeEntrada, sobrenome: sobrenomeEntrada),
+        ),
       );
       showLongToast("Login efetuado com sucesso!!!");
     } else {
