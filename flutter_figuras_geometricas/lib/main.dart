@@ -3,7 +3,7 @@ import 'package:flutter_figuras_geometricas/pages/splash.dart';
 
 
 void main() {
-  runApp( MaterialApp(
+  runApp( const MaterialApp(
     debugShowCheckedModeBanner: false,
     home: Splash(),
   ));

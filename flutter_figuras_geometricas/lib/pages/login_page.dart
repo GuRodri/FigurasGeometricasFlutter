@@ -6,7 +6,7 @@ import 'bemvindo_page.dart';
 
 
 class Login extends StatefulWidget {
-  Login({Key? key}) : super(key: key);
+  const Login({super.key});
 
   @override
   _LoginState createState() => _LoginState();

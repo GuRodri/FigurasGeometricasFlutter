@@ -4,7 +4,7 @@ class Bemvindo extends StatelessWidget {
   final String nome;
   final String sobrenome;
 
-  Bemvindo({Key? key, required this.nome, required this.sobrenome}) : super(key: key);
+  const Bemvindo({super.key, required this.nome, required this.sobrenome});
 
   @override
   Widget build(BuildContext context) {
