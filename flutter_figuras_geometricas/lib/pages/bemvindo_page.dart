@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_figuras_geometricas/pages/figurasgeometricas_page.dart';
 
 class Bemvindo extends StatelessWidget {
   final String nome;
@@ -13,7 +14,22 @@ class Bemvindo extends StatelessWidget {
         title: const Text('Bem-vindo'),
       ),
       body: Center(
-        child: Text('Bem-vindo, $nome $sobrenome!'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Bem-vindo, $nome $sobrenome!'),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => FigurasGeometricasPage()),
+                );
+              },
+              child: const Text('Acessar'),
+            ),
+          ],
+        ),
       ),
     );
   }
